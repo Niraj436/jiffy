@@ -4,6 +4,7 @@ import Burger from '@/components/icons/burger';
 import Location from '@/components/icons/Location';
 import JiffyLogo from '@/components/JiffyLogo';
 import Navbar from '@/components/Navbar';
+import Search from '@/components/Search';
 import Image from 'next/image';
 
 export default function Home() {
@@ -18,13 +19,18 @@ export default function Home() {
 						<Burger />
 					</div>
 				</div>
+
 				<div className='flex items-center gap-x-1'>
 					<div>
 						<Location />
 					</div>
-					<h1 className='text-xs text-text-secondary'>
+
+					<h1 className='text-xs text-secondary-content'>
 						The Gardens, Panipokhari, Maharajgunj, Kathmandu
 					</h1>
+				</div>
+				<div className='pt-3'>
+					<Search />
 				</div>
 				<div className='py-2'>
 					<Explore />
