@@ -1,11 +1,15 @@
+import Container from '@/components/Container';
 import Image from 'next/image';
 
 export default function Home() {
-  return (
-    <div className="primary ">
-      <div>
-        <div className="h-16 w-16 text-background bg-brand">Hello</div>
-      </div>
-    </div>
-  );
+	return (
+		<div className='bg-background max-w-[430px] mx-auto'>
+			<Container>
+				<div className='flex justify-between'>
+					<div>Jiffy</div>
+					<div>menu</div>
+				</div>
+			</Container>
+		</div>
+	);
 }
