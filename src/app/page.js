@@ -1,7 +1,9 @@
 import Container from '@/components/Container';
+import Explore from '@/components/Explore';
 import Burger from '@/components/icons/burger';
 import Location from '@/components/icons/Location';
 import JiffyLogo from '@/components/JiffyLogo';
+import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 
 export default function Home() {
@@ -24,7 +26,13 @@ export default function Home() {
 						The Gardens, Panipokhari, Maharajgunj, Kathmandu
 					</h1>
 				</div>
+				<div className='py-2'>
+					<Explore />
+				</div>
 			</Container>
+			<div className='sticky bottom-0'>
+				<Navbar />
+			</div>
 		</div>
 	);
 }

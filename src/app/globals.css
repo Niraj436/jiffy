@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --brand: #2a004e;
-  --brand-light: #541a85;
-  --background: #e0e7ff;
-  --primary-content: #0f172a;
-  --secondary-content: #64748b;
+	--brand: #2a004e;
+	--brand-light: #541a85;
+	--background: #e9eeff;
+	--primary-content: #0f172a;
+	--secondary-content: #64748b;
 }
