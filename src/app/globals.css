@@ -2,14 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.primary {
-	@apply text-orange-400;
-}
-
-.secondary {
-	@apply text-blue-600;
-}
-
-.tertiary {
-	@apply text-green-500;
+:root {
+  --brand: #2a004e;
+  --brand-light: #541a85;
+  --background: #e0e7ff;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
 }
