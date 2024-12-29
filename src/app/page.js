@@ -1,4 +1,5 @@
 import Container from '@/components/Container';
+import DietaryQuest from '@/components/DietaryQuest';
 import Explore from '@/components/Explore';
 import FoodItems from '@/components/FoodItems';
 import Burger from '@/components/icons/burger';
