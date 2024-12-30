@@ -6,6 +6,10 @@ export const useQuestStore = create()(
     (set) => ({
       quests: [],
       setQuests: (value) => set({ quests: value }),
+      cart: [],
+      setCart: (value) => set({ cart: value }),
+      selectedQuest: null,
+      setSelectedQuest: (value) => set({ selectedQuest: value }),
     }),
     { name: 'quest-store', storage: createJSONStorage(() => sessionStorage) }
   )

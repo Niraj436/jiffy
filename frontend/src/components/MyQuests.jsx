@@ -37,11 +37,12 @@ const MyQuests = ({ item }) => {
             </div>
           </div>
           <div className='mt-3'>
-            <button className='bg-white/80 text-brand text-[0.65rem] px-5 py-[0.5rem] rounded-md font-semibold'>
-              <Link href={`/quests/${item._id}`}>
-                {isChallengeStarted == true ? 'Continue' : 'Start'}
-              </Link>
-            </button>
+            <Link
+              href={`/quests/${item._id}`}
+              className='bg-white/80 text-brand text-[0.65rem] px-5 py-[0.5rem] rounded-md font-semibold'
+            >
+              {isChallengeStarted == true ? 'Continue' : 'Start'}
+            </Link>
           </div>
           <img
             className='absolute bottom-0 right-0 max-w-[90px]'

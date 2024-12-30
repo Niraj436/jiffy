@@ -4,7 +4,7 @@ import React from 'react';
 const QuestBanner = () => {
   return (
     <div>
-      <div className='bg-purple-700 rounded-md'>
+      <div className='bg-gradient-to-br from-brand-light to-brand rounded-md'>
         <div className='relative rounded-lg h-[123px] flex flex-col justify-center pl-6 text-white my-3'>
           <div className='flex gap-x-2 items-center'>
             <div>

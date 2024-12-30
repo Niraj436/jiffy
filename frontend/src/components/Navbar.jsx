@@ -2,10 +2,10 @@
 import React from 'react';
 import Home from './icons/Home';
 import Cart from './icons/Cart';
-import Bell from './icons/Bell';
 import Profile from './icons/Profile';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Trophy from './icons/Trophy';
 
 const Navbar = ({ request }) => {
   const navlinks = [
@@ -20,9 +20,9 @@ const Navbar = ({ request }) => {
       link: '/cart',
     },
     {
-      title: 'Notifications',
-      icon: Bell,
-      link: '/notifications',
+      title: 'Quests',
+      icon: Trophy,
+      link: '/quests',
     },
     {
       title: 'Account',
@@ -36,7 +36,7 @@ const Navbar = ({ request }) => {
   console.log(pathname);
 
   return (
-    <div className='flex justify-center gap-x-10 items-center py-4 border border-t-gray-300 '>
+    <div className='flex justify-between gap-x-10 px-8 items-center py-4 border border-t-gray-300 '>
       {navlinks.map((navlink, idx) => (
         <Link
           key={idx}

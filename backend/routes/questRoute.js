@@ -1,8 +1,12 @@
 import express from 'express';
-import { getAllQuests, getQuest } from '../controller/questController.js';
+import {
+  getAllQuests,
+  getQuest,
+  completeChallenge,
+} from '../controller/questController.js';
 const router = express.Router();
 
-router.route('/').get(getAllQuests);
+router.route('/').get(getAllQuests).post(completeChallenge);
 router.route('/:id').get(getQuest);
 
 export default router;
