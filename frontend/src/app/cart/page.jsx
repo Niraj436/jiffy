@@ -69,7 +69,7 @@ const Cart = () => {
                 Go Back
               </button>
             </div>
-          ) : (
+          ) : cart.length > 0 ? (
             <>
               <h1 className='text-brand font-bold text-lg py-2 mt-4'>
                 Your Cart
@@ -128,6 +128,12 @@ const Cart = () => {
                   Place Order
                 </button>
               </div>
+            </>
+          ) : (
+            <>
+              <h1 className='text-brand font-bold text-lg py-2 mt-4'>
+                Your Cart is Empty!
+              </h1>
             </>
           )}
         </Container>
