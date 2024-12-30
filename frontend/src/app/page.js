@@ -3,7 +3,6 @@ import Container from '@/components/Container';
 import Explore from '@/components/Explore';
 import FoodItems from '@/components/FoodItems';
 import Header from '@/components/Header';
-
 import Location from '@/components/icons/Location';
 import JiffyLogo from '@/components/JiffyLogo';
 import LocationBar from '@/components/LocationBar';
