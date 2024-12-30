@@ -15,6 +15,6 @@ app.use(cors());
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, async () => {
-  await connectDB();
-  console.log(`Server running in ${process.env.NODE_ENV} on port ${PORT}`);
+	await connectDB();
+	console.log(`Server running in ${process.env.NODE_ENV} on port ${PORT}`);
 });
