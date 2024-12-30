@@ -3,23 +3,20 @@ import Microphone from './icons/Microphone';
 import SearchIcn from './icons/SearchIcn';
 
 const Search = () => {
-	return (
-		<div className='flex bg-white px-8 relative  py-1 rounded-md '>
-			<div className='absolute left-2 top-2'>
-				<SearchIcn />
-			</div>
-			<div className=''>
-				<input
-					type='text'
-					placeholder='Search for "Biryani'
-					className='px-2 outline-none placeholder:text-sm flex-1'
-				/>
-			</div>
-			<div className='absolute right-2 top-2'>
-				<Microphone />
-			</div>
-		</div>
-	);
+  return (
+    <div className="flex items-center bg-white px-4 py-3 rounded-md ">
+      <SearchIcn />
+
+      <input
+        type="text"
+        placeholder='Search for "Biryani'
+        className="px-2 text-xs outline-none placeholder:text-xs flex-1"
+      />
+      <div className="pl-4 border-l">
+        <Microphone />
+      </div>
+    </div>
+  );
 };
 
 export default Search;
