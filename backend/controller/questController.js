@@ -7,7 +7,7 @@ import { populate } from 'dotenv';
 export const getAllQuests = async (req, res) => {
   try {
     const quests = await Quest.find();
-    const sampleUser = '67729b03349e81afde776951';
+    const sampleUser = '6772aa17daf5a7614de687c0';
 
     const user = await User.findById(sampleUser).populate('challengeIds');
 

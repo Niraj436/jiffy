@@ -1,7 +1,7 @@
 const seedQuests = [
   {
     name: 'Mithila Cuisine',
-    desc: 'From soft Malpuwa to authentic Litti Chokha! .',
+    desc: 'From soft Malpuwa to authentic Litti Chokha!',
     image: '/images/mithila.png',
     type: 'Cultural',
   },
@@ -13,13 +13,13 @@ const seedQuests = [
   },
   {
     name: 'Tibetan Cuisine',
-    desc: 'From spicy Laphing to warm Thenthuk',
+    desc: 'From spicy Laphing to warm Thenthuk!',
     image: '/images/tibetan.png',
     type: 'Cultural',
   },
   {
     name: 'Vegeterian Cuisine',
-    desc: 'From fresh Salads to aromatic Paneer Tikka! ',
+    desc: 'From fresh Salads to aromatic Paneer Tikka!',
     image: '/images/vegeterian.png',
     type: 'Dietary',
   },
