@@ -19,6 +19,12 @@ const questSchema = new mongoose.Schema(
       enum: ['Cultural', 'Dietary'],
       required: true,
     },
+    foodChallenges: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Food',
+      },
+    ],
   },
   { timestamps: true }
 );
