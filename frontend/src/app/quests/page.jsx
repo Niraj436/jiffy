@@ -6,9 +6,13 @@ import MyQuests from '@/components/MyQuests';
 import Navbar from '@/components/Navbar';
 import { API } from '@/config/config';
 import { useEffect, useState } from 'react';
+import { useQuestStore } from '../../../store/quest-store';
 
 const Quest = () => {
-	const [quests, setQuests] = useState([]);
+  // const [quests, setQuests] = useState([]);
+
+  const setQuests = useQuestStore((state) => state.setQuests);
+  const quests = useQuestStore((state) => state.quests);
 
 	useEffect(() => {
 		fetch(`${API}/api/quests`)

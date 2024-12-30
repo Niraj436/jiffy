@@ -102,7 +102,8 @@ const importData = async () => {
     const sampleUsers = seedUsers.map((user, i) => {
       return {
         ...user,
-        challengeIds: getRandomSubset(createdChallanges).map((c) => c._id),
+        challengeIds:
+          i === 2 ? [createdChallanges[0]._id, createdChallanges[1]._id] : [],
       };
     });
 

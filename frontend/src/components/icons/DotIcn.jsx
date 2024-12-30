@@ -7,7 +7,7 @@ const DotIcn = () => {
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 16 16'
         fill='currentColor'
-        className='size-4 m-1 fill-green-600 bg-green-600 rounded-full'
+        className='size-3 m-2 rounded-full bg-current'
       >
         <path
           fillRule='evenodd'
