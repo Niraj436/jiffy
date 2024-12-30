@@ -5,9 +5,13 @@ import LocationBar from '@/components/LocationBar';
 import MyQuests from '@/components/MyQuests';
 import Navbar from '@/components/Navbar';
 import { useEffect, useState } from 'react';
+import { useQuestStore } from '../../../store/quest-store';
 
 const Quest = () => {
-  const [quests, setQuests] = useState([]);
+  // const [quests, setQuests] = useState([]);
+
+  const setQuests = useQuestStore((state) => state.setQuests);
+  const quests = useQuestStore((state) => state.quests);
 
   useEffect(() => {
     fetch('http://localhost:3001/api/quests')
