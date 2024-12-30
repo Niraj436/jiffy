@@ -1,20 +1,22 @@
 import Link from 'next/link';
 import React from 'react';
+import { cuisineColors } from '../../constants/cuisine-ui';
 
 const MyQuests = ({ item }) => {
   const completedPercentage = Math.floor(
-    (item.challengesCompleted / item.totalChallenges) * 100
+    (item.challengesCompleted / item.foodChallenges.length) * 100
   );
 
-  console.log({ completedPercentage });
-
   const isChallengeStarted = item.challengesCompleted > 0;
+  const accentColor = cuisineColors[item.name].accent;
+  const accentColorSecondary = cuisineColors[item.name].accentSecondary;
+
   return (
     <div>
       <div>
         <div
           style={{
-            background: `linear-gradient(to top left, ${item.accent}, ${item.accentSecondary})`,
+            background: `linear-gradient(to top left, ${accentColor}, ${accentColorSecondary})`,
           }}
           className='relative rounded-lg h-[123px] flex flex-col justify-center pl-6 text-white my-3'
         >
@@ -23,15 +25,15 @@ const MyQuests = ({ item }) => {
               <CircularProgressBar
                 size={35}
                 strokeWidth={5}
-                progress={75}
+                progress={item.completedPercentage}
                 color='white'
               />
             )}
             <div>
               <h3 className='font-bold bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent'>
-                {item.title}
+                {item.name}
               </h3>
-              <p className='text-[9px]'>{item.description}</p>
+              <p className='text-[9px]'>{item.desc}</p>
             </div>
           </div>
           <div className='mt-3'>

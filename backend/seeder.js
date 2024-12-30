@@ -36,7 +36,34 @@ const importData = async () => {
     const createdFoods = await Food.insertMany(sampleFoods);
     console.log({ createdFoods: createdFoods });
 
-    const createdQuests = await Quest.insertMany(seedQuests);
+    const newariFoods = createdFoods
+      .filter((food, idx) => idx < 8)
+      .map((i) => i._id);
+    const mithilaFoods = createdFoods
+      .filter((food, idx) => idx < 13 && idx > 7)
+      .map((i) => i._id);
+    const tibetanFoods = createdFoods
+      .filter((food, idx) => idx < 23 && idx > 12)
+      .map((i) => i._id);
+    const vegeterianFoods = createdFoods
+      .filter((food, idx) => idx > 22)
+      .map((i) => i._id);
+
+    const sampleQuests = seedQuests.map((quest, i) => {
+      return {
+        ...quest,
+        foodChallenges:
+          quest.name === 'Newari Cuisine'
+            ? newariFoods
+            : quest.name === 'Mithila Cuisine'
+            ? mithilaFoods
+            : quest.name === 'Tibetan Cuisine'
+            ? tibetanFoods
+            : vegeterianFoods,
+      };
+    });
+
+    const createdQuests = await Quest.insertMany(sampleQuests);
     console.log({ createdQuests: createdQuests });
 
     const newariId = createdQuests.find(

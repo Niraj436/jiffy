@@ -1,66 +1,45 @@
+'use client';
 import Container from '@/components/Container';
 import Header from '@/components/Header';
 import LocationBar from '@/components/LocationBar';
 import MyQuests from '@/components/MyQuests';
 import Navbar from '@/components/Navbar';
+import { useEffect, useState } from 'react';
 
 const Quest = () => {
-  const YourQuest = [
-    {
-      title: 'Newari Cuisine',
-      description: 'From sweet Yomari to delicious Samay Baji!',
-      completed: false,
-      challengesCompleted: 6,
-      totalChallenges: 8,
-      type: 'cultural',
-      accent: '#7F1414',
-      accentSecondary: '#B81919',
-      image: '/images/newari.png',
-    },
-    {
-      title: 'Mithila Cuisine',
-      description: 'From soft Malpuwa to authentic Litti Chokha!',
-      completed: false,
-      challengesCompleted: 0,
-      totalChallenges: 5,
-      type: 'cultural',
-      accent: '#0E91A8',
-      accentSecondary: '#06B6D4',
-      image: '/images/mithila.png',
-    },
-    {
-      title: 'Tibetan Cuisine',
-      description: 'From spicy Laphing to warm Thenthuk!',
-      completed: false,
-      challengesCompleted: 0,
-      totalChallenges: 10,
-      type: 'cultural',
-      accent: '#D88B09',
-      accentSecondary: '#FEAF2A',
-      image: '/images/tibetan.png',
-    },
-    {
-      title: 'Vegeterian Cuisine',
-      description: 'From fresh Salads to aromatic Panner Tikka!',
-      completed: false,
-      challengesCompleted: 0,
-      totalChallenges: 8,
-      type: 'dietary',
-      accent: '#65A30D',
-      accentSecondary: '#65A30D',
-      image: '/images/vegeterian.png',
-    },
-  ];
+  const [quests, setQuests] = useState([]);
 
-  const normalCuisine = YourQuest.filter((item) => {
-    return item.type === 'cultural';
+  useEffect(() => {
+    fetch('http://localhost:3001/api/quests')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        const finalQuests = data.questProgress
+          .map((quest) => {
+            return {
+              ...quest,
+              completedPercentage: Math.floor(
+                (quest.challengesCompleted / quest.foodChallenges.length) * 100
+              ),
+            };
+          })
+          .sort((a, b) => b.completedPercentage - a.completedPercentage);
+
+        console.log({ finalQuests });
+        setQuests(finalQuests);
+      });
+  }, []);
+
+  const CulturalQuests = quests.filter((item) => {
+    return item.type === 'Cultural';
   });
 
-  const vegCuisine = YourQuest.filter((item) => {
-    return item.type === 'dietary';
+  const DietaryQuests = quests.filter((item) => {
+    return item.type === 'Dietary';
   });
 
-  return (
+  return quests.length > 0 ? (
     <div className='bg-background max-w-[430px] mx-auto'>
       <Container>
         <Header />
@@ -70,8 +49,8 @@ const Quest = () => {
           <p className='text-xs text-secondary-content'>
             Dive into exciting cuisines and conquer every quest.
           </p>
-          {normalCuisine.map((item) => {
-            return <MyQuests item={item} />;
+          {CulturalQuests.map((item) => {
+            return <MyQuests key={item.name} item={item} />;
           })}
         </div>
         <div>
@@ -79,8 +58,8 @@ const Quest = () => {
           <p className='text-xs text-secondary-content'>
             Strict on your diet? We've got you covered!
           </p>
-          {vegCuisine.map((item) => {
-            return <MyQuests item={item} />;
+          {DietaryQuests.map((item) => {
+            return <MyQuests key={item.name} item={item} />;
           })}
         </div>
       </Container>
@@ -88,6 +67,8 @@ const Quest = () => {
         <Navbar />
       </div>
     </div>
+  ) : (
+    <></>
   );
 };
 
