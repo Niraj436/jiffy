@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "data:import": "node backend/seeder.js",
+    "data:destroy": "node backend/seeder.js -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

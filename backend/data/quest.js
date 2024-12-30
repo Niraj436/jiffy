@@ -7,7 +7,7 @@ const seedQuests = [
   },
   {
     name: 'Newari Cuisine',
-    description: 'From sweet Yomari to delicious Samay Baji!',
+    desc: 'From sweet Yomari to delicious Samay Baji!',
     image: '/images/newari.png',
     type: 'Cultural',
   },
@@ -18,7 +18,7 @@ const seedQuests = [
     type: 'Cultural',
   },
   {
-    name: 'Vegeterian Quest',
+    name: 'Vegeterian Cuisine',
     desc: 'From fresh Salads to aromatic Paneer Tikka! ',
     image: '/images/vegeterian.png',
     type: 'Dietary',

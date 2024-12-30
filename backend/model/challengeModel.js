@@ -5,6 +5,7 @@ const challengeSchema = new mongoose.Schema(
     completed: {
       type: Boolean,
       required: true,
+      default: false,
     },
     foodId: {
       type: mongoose.Schema.Types.ObjectId,
