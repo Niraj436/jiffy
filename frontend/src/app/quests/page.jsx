@@ -1,10 +1,14 @@
+'use client'
 import Container from '@/components/Container';
 import Header from '@/components/Header';
 import LocationBar from '@/components/LocationBar';
 import MyQuests from '@/components/MyQuests';
 import Navbar from '@/components/Navbar';
+import useGetQuests from '@/hooks/useGetQuests';
 
 const Quest = () => {
+	const { quests, loading } = useGetQuests();
+    
   const YourQuest = [
     {
       title: 'Newari Cuisine',

@@ -32,7 +32,7 @@ const Explore = () => {
 								<div>
 									<Star />
 								</div>
-								<div className='text-xs'>4.5</div>
+								<div className='text-xs'>{item.rating}</div>
 							</div>
 						</div>
 					);

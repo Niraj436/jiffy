@@ -3,7 +3,7 @@ import { API } from '@/config/config';
 import { useEffect, useState } from 'react';
 
 const useGetRestaurants = () => {
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
 	const [restaurants, setRestaurants] = useState([]);
 
 	useEffect(() => {
