@@ -1,33 +1,20 @@
 import Container from '@/components/Container';
 import Explore from '@/components/Explore';
 import FoodItems from '@/components/FoodItems';
+import Header from '@/components/Header';
 import Burger from '@/components/icons/burger';
 import Location from '@/components/icons/Location';
 import JiffyLogo from '@/components/JiffyLogo';
 import Navbar from '@/components/Navbar';
 import Search from '@/components/Search';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
   return (
     <div className='bg-background max-w-[430px] mx-auto'>
       <Container>
-        <div className='pt-4 flex justify-between items-center '>
-          <JiffyLogo />
+        <Header />
 
-          <Burger />
-        </div>
-
-        <div className='flex items-center gap-x-1 mt-4'>
-          <div>
-            <Location />
-          </div>
-
-          <h1 className='text-xs text-slate-500'>
-            The Gardens, Panipokhari, Maharajgunj, Kathmandu
-          </h1>
-        </div>
         <div className='pt-5'>
           <Search />
         </div>
