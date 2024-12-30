@@ -45,7 +45,7 @@ const Challenges = ({ item }) => {
   );
 };
 
-const LocationOutline = ({ className }) => (
+export const LocationOutline = ({ className }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     fill='none'
