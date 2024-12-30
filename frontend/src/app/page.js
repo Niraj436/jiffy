@@ -6,7 +6,9 @@ import Header from '@/components/Header';
 import Burger from '@/components/icons/burger';
 import Location from '@/components/icons/Location';
 import JiffyLogo from '@/components/JiffyLogo';
+import MyQuests from '@/components/MyQuests';
 import Navbar from '@/components/Navbar';
+import QuestBanner from '@/components/QuestBanner';
 import Search from '@/components/Search';
 import useGetRestaurants from '@/hooks/useGetRestaurants';
 import Link from 'next/link';
@@ -14,6 +16,12 @@ import Link from 'next/link';
 export default function Home() {
 	const { restaurants, loading } = useGetRestaurants();
 
+	const item = [
+		{
+			name: 'Complete the Quest, Claim the Reward',
+			desc: 'Earn badges and Tokens',
+		},
+	];
 	return (
 		<>
 			{!loading ? (
@@ -29,10 +37,7 @@ export default function Home() {
 						</div>
 						<div className='pt-3'>
 							<Link href={'/quests'}>
-								<img
-									src='/images/banner.png'
-									alt='banner image'
-								/>
+								<QuestBanner />
 							</Link>
 						</div>
 						<div className='py-2'>

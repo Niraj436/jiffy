@@ -13,13 +13,13 @@ const Explore = () => {
 				<h1 className='py-2 text-secondary-content text-sm'>Explore</h1>
 				<div className='flex-1 h-[1px] bg-slate-300'></div>
 			</div>
-			<div className='grid grid-cols-2 gap-x-2 gap-y-2 '>
+			<div className='grid grid-cols-2 gap-x-2 gap-y-2 place-items-center '>
 				{restaurants?.map((item) => {
 					return (
 						<div key={item._id}>
 							<img
 								alt='image'
-								className='rounded-md'
+								className='rounded-md h-32 w-44 '
 								src={`${item.image}`}
 							/>
 							<div className='text-xs font-bold text-brand pt-3'>

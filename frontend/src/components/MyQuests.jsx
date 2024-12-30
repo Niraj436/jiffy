@@ -7,7 +7,7 @@ const MyQuests = ({ item }) => {
 		(item.challengesCompleted / item.foodChallenges.length) * 100
 	);
 
-	const isChallengeStarted = item.challengesCompleted > 0;
+	const isChallengeStarted = item?.challengesCompleted > 0;
 	const accentColor = cuisineColors[item.name].accent;
 	const accentColorSecondary = cuisineColors[item.name].accentSecondary;
 
