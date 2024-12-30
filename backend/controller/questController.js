@@ -4,10 +4,11 @@ import Challenge from '../model/challengeModel.js';
 import Food from '../model/foodModel.js';
 import { populate } from 'dotenv';
 
+const sampleUser = '6772d4997f208e64190e5f3c';
+
 export const getAllQuests = async (req, res) => {
 	try {
 		const quests = await Quest.find();
-		const sampleUser = '6772aa17daf5a7614de687c0';
 
 		const user = await User.findById(sampleUser).populate('challengeIds');
 
@@ -29,11 +30,43 @@ export const getAllQuests = async (req, res) => {
 			};
 		});
 
-		// console.log({ questProgress });
+		console.log({ questProgress });
 
 		res.json({ questProgress });
 	} catch (err) {
 		console.error('Error fetching quests:', err);
+		res.status(500).json({ error: 'Internal Server Error' });
+	}
+};
+
+export const getQuest = async (req, res) => {
+	try {
+		console.log('parms', req.params.id);
+		const quest = await Quest.findById(req.params.id).populate({
+			path: 'foodChallenges',
+			populate: { path: 'restaurantId' },
+		});
+
+		const user = await User.findById(sampleUser).populate('challengeIds');
+
+		const challengeIds = user.challengeIds.map((challenge) => challenge._id);
+
+		const populatedChallenges = await Challenge.find({
+			_id: { $in: challengeIds },
+		})
+			.populate('foodId')
+			.populate('questId');
+
+		const questDetails = {
+			...quest.toObject(),
+			challenges: populatedChallenges.filter(
+				(challenge) => challenge.questId.name === quest.name
+			),
+		};
+
+		res.json({ questDetails });
+	} catch (err) {
+		console.error('Error fetching quest:', err);
 		res.status(500).json({ error: 'Internal Server Error' });
 	}
 };
