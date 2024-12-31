@@ -60,7 +60,7 @@ const Quest = () => {
           {loading ? (
             <div className='space-y-3 my-2'>
               {Array.from({ length: 3 }).map((_, i) => (
-                <Skeleton className='h-28 w-full' key={i} />
+                <Skeleton className='h-[128px] w-full' key={i} />
               ))}
             </div>
           ) : (
@@ -77,7 +77,7 @@ const Quest = () => {
           {loading ? (
             <div className='space-y-3 my-2'>
               {Array.from({ length: 1 }).map((_, i) => (
-                <Skeleton className='h-28 w-full' key={i} />
+                <Skeleton className='h-[128px] w-full' key={i} />
               ))}
             </div>
           ) : (

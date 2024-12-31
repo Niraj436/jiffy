@@ -15,15 +15,16 @@ const Navbar = ({ request }) => {
       link: '/',
     },
     {
-      title: 'Cart',
-      icon: Cart,
-      link: '/cart',
-    },
-    {
       title: 'Quests',
       icon: Trophy,
       link: '/quests',
     },
+    {
+      title: 'Cart',
+      icon: Cart,
+      link: '/cart',
+    },
+
     {
       title: 'Account',
       icon: Profile,

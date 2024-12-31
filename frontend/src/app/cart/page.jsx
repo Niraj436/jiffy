@@ -52,7 +52,7 @@ const Cart = () => {
 
   return (
     <>
-      <div className='bg-background max-w-[430px] min-h-screen mx-auto'>
+      <div className='bg-background max-w-[430px] min-h-[calc(100vh-77px)] mx-auto'>
         <Container>
           <Header />
           {orderSuccess ? (
@@ -138,7 +138,7 @@ const Cart = () => {
           )}
         </Container>
       </div>
-      <div className='sticky bottom-0 bg-background mx-auto w-[430px]'>
+      <div className='sticky bottom-0 bg-background'>
         <Navbar />
       </div>
     </>
