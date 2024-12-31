@@ -20,7 +20,7 @@ const Explore = () => {
                 <div key={item._id}>
                   <img
                     alt='image'
-                    className='rounded-md h-32 w-44'
+                    className='rounded-md h-32 w-44 object-cover'
                     src={`${item.image}`}
                   />
                   <div className='text-xs font-bold text-brand pt-3'>

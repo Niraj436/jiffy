@@ -37,12 +37,14 @@ const QuestDetail = () => {
   const { questId } = useParams();
 
   const [selectedQuest, setSelectedQuest] = useState(null);
+  const [loading, setLoading] = useState(null);
 
   const quests = useQuestStore((state) => state.quests);
 
   const moreQuestInfo = quests.find((q) => q._id === questId);
 
   useEffect(() => {
+    setLoading(true);
     fetch(`http://localhost:3001/api/quests/${questId}`)
       .then((res) => res.json())
       .then((data) => {
@@ -65,6 +67,7 @@ const QuestDetail = () => {
           ...data.questDetails,
           foodChallenges: finalChallenges,
         };
+        setLoading(false);
 
         console.log({ finalQuestDetails });
         setSelectedQuest(finalQuestDetails);
@@ -75,11 +78,11 @@ const QuestDetail = () => {
   const accentColorSecondary =
     cuisineColors[selectedQuest?.name]?.accentSecondary;
 
-  return !selectedQuest ? (
+  return loading ? (
     <div className='max-w-[430px] h-screen flex items-center justify-center mx-auto bg-background'>
       <Spinner className='size-12 text-brand-light' />
     </div>
-  ) : (
+  ) : selectedQuest ? (
     <div className='bg-background max-w-[430px] mx-auto'>
       <div
         style={{ backgroundColor: accentColorSecondary }}
@@ -163,6 +166,8 @@ const QuestDetail = () => {
         <Navbar />
       </div>
     </div>
+  ) : (
+    <></>
   );
 };
 
