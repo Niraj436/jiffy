@@ -11,6 +11,7 @@ import { cuisineColors } from '../../../../constants/cuisine-ui';
 import { useQuestStore } from '../../../../store/quest-store';
 import { Skeleton } from '@/components/Explore';
 import { Spinner } from '@/app/cart/page';
+import { API } from '@/config/config';
 
 const QuestDetail = () => {
 	const items = [
@@ -45,7 +46,7 @@ const QuestDetail = () => {
 
 	useEffect(() => {
 		setLoading(true);
-		fetch(`http://localhost:3001/api/quests/${questId}`)
+		fetch(`${API}/api/quests/${questId}`)
 			.then((res) => res.json())
 			.then((data) => {
 				const completedChallenges = data.questDetails.challenges;
