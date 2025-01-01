@@ -11,6 +11,7 @@ import OrderItems from '@/components/OrderItems';
 import React, { useState } from 'react';
 import { useQuestStore } from '../../../store/quest-store';
 import { useRouter } from 'next/navigation';
+import { API } from '@/config/config';
 
 const Cart = () => {
 	const [orderSuccess, setOrderSuccess] = useState(false);
@@ -31,7 +32,7 @@ const Cart = () => {
 
 	const completeOrder = () => {
 		setOrderLoading(true);
-		fetch('http://localhost:3001/api/quests/', {
+		fetch(`${API}/api/quests/`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
