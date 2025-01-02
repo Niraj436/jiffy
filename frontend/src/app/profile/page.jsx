@@ -72,9 +72,9 @@ const Profile = () => {
             <div className='w-full bg-slate-300 h-[1px]'></div>
           </div>
         </Container>
-      </div>
-      <div className='sticky bottom-0 bg-background'>
-        <Navbar />
+        <div className='sticky bottom-0 bg-background'>
+          <Navbar />
+        </div>
       </div>
     </>
   );
