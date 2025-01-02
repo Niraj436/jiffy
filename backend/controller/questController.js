@@ -1,10 +1,12 @@
 import Quest from '../model/questModel.js';
 import User from '../model/userModel.js';
-import Challenge from '../model/challengeModel.js';
 import Food from '../model/foodModel.js';
-import { populate } from 'dotenv';
+import Challenge from '../model/challengeModel.js';
+import dotenv from 'dotenv';
 
-const sampleUser = '6772f89152c6b79ce7d1c15c';
+dotenv.config();
+
+const sampleUser = process.env.SAMPLE_USER_ID;
 
 export const getAllQuests = async (req, res) => {
   try {

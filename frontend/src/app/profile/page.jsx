@@ -5,14 +5,14 @@ import React from 'react';
 
 const Profile = () => {
   let bagdes = [
-    '/images/newari_pasa.png',
-    '/images/mithila_mitra.png',
-    '/images/tibetan_rokpa.png',
-    '/images/sakahaari_sikaari.png',
+    { name: 'Newari Passa', image: '/images/newari_pasa.png' },
+    { name: 'Mithila Mitra', image: '/images/mithila_mitra.png' },
+    { name: 'Tibetan Rokpa', image: '/images/tibetan_rokpa.png' },
+    { name: 'Sakahaari Sikaari', image: '/images/sakahaari_sikaari.png' },
   ];
   return (
     <>
-      <div className='bg-background max-w-[430px] mx-auto min-h-[calc(100vh-77px)]'>
+      <div className='bg-background max-w-[430px] mx-auto min-h-[calc(100vh)]'>
         <Container>
           <Header />
           <div className='mt-4 flex items-center gap-x-3 py-3'>
@@ -36,9 +36,17 @@ const Profile = () => {
             </h1>
             <div className='w-full bg-slate-300 h-[1px]'></div>
           </div>
-          <div className='flex items-center justify-between py-3'>
+          <div className='grid grid-cols-2 gap-y-6 py-3'>
             {bagdes.map((badge, index) => (
-              <img key={index} src={badge} alt='badge' className='w-[70px]' />
+              <div
+                className='flex flex-col items-center justify-center'
+                key={index}
+              >
+                <img src={badge.image} alt='badge' className='w-[60px]' />
+                <p className='text-xs font-medium text-slate-900 mt-2'>
+                  {badge.name}
+                </p>
+              </div>
             ))}
           </div>
           <div className='flex flex-col justify-center gap-y-3 py-3'>

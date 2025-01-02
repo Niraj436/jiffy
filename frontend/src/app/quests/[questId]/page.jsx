@@ -13,26 +13,12 @@ import { Skeleton } from '@/components/Explore';
 import { Spinner } from '@/app/cart/page';
 
 const QuestDetail = () => {
-  const items = [
-    {
-      name: 'Khuwa Yomari',
-      location: 'Newa Lahana, Kritipur',
-      image: '',
-      completed: true,
-    },
-    {
-      name: 'Juju Dhau',
-      location: 'Madhikarmi Cafe, Bhaktapur',
-      image: '',
-      completed: false,
-    },
-    {
-      name: 'Samay Baji',
-      location: 'Madhikarmi Cafe, Bhaktapur',
-      image: '',
-      completed: false,
-    },
-  ];
+  const BADGES = {
+    'Newari Cuisine': 'Newari Passa',
+    'Mithila Cuisine': 'Mithila Mitra',
+    'Tibetan Cuisine': 'Tibetan Rokpa',
+    'Vegeterian Cuisine': 'Sakahaari Sikaari',
+  };
 
   const { questId } = useParams();
 
@@ -120,7 +106,9 @@ const QuestDetail = () => {
               {selectedQuest.foodChallenges.length} Challenges Completed
             </h1>
             <p className='text-secondary-content text-xs'>
-              You’re on track to earn your “Newari Pasa” badge, keep going.
+              You’re on track to earn your{' '}
+              <span className='font-medium'>{BADGES[selectedQuest.name]}</span>{' '}
+              badge, keep going.
             </p>
           </div>
         </div>

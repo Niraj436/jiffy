@@ -21,6 +21,7 @@ const importData = async () => {
     await Restaurant.deleteMany();
     await Food.deleteMany();
     await Challenge.deleteMany();
+    await Restaurant.deleteMany();
 
     const createdRests = await Restaurant.insertMany(seedRestaurants);
 
@@ -127,7 +128,7 @@ function getRandomSubset(array) {
 }
 
 if (process.argv[2] === '-d') {
-  destroyData();
+  //destroy
 } else {
   importData();
 }
